@@ -5,11 +5,12 @@ var Person = Backbone.Model.extend({
 var People = Backbone.Collection.extend({
 });
 
-var PersonView = Backbone.view.extend({
+var PersonView = Backbone.View.extend({
     tagName: 'li',
-    template: _.template($("#personTemplate".html())),
+    template: _.template($("#personTemplate").html()),
     render: function () {
         var html = this.template(this.model.toJSON());
+        this.$el.append(html);
         return this;
     }
 
@@ -37,3 +38,9 @@ var person3 = new Person({
 });
 
 var people = new People([person1, person2, person3]);
+
+var model = people.first();
+var view = new PersonView({model:model});
+
+view.render();
+console.log(view.el);
