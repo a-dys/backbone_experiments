@@ -1,12 +1,14 @@
-var Router = Backbone.Router.extend({
-    routes: {
-        "client" : "showClientDetails"
-    },
-    showClientDetails : function () {
-        console.log("Client details was changed.")
-    }
-
+var PersonDetails = Backbone.View.extend({
+   tagName: 'div',
+   className: 'client-details',
+   template: _.template($('#personDetailsTemplate').html()),
+   render: function () {
+       var html = this.template(this.model.toJSON());
+       this.$el.html(html);
+       $('body').append(this.el);
+   }
 });
+
 
 var Person = Backbone.Model.extend({
 });
@@ -23,15 +25,13 @@ var PersonView = Backbone.View.extend({
         this.$el.html(html);
         return this;
     },
-    initialize : function() {
-        this.listenTo(this.model, "remove", function () {
-            this.remove();
-        });
-        this.listenTo(this.model, "change", this.render);
-        this.listenTo(this.model, "invalid", function (model, error, options) {
-            console.log(error);
-        })
+    events: {
+        "click": "redirectToDetails"
+    },
+    redirectToDetails: function () {
+        router.navigate('client/'+this.model.get("id"), {trigger: true});
     }
+
 });
 
 var PeopleView = Backbone.View.extend({
@@ -44,9 +44,6 @@ var PeopleView = Backbone.View.extend({
    addOne: function (model) {
        var view = new PersonView({model: model});
        this.$el.append(view.render().el)
-   },
-   initialize : function () {
-       this.listenTo(this.collection, "add", this.render);
    }
 
 });
@@ -54,19 +51,22 @@ var PeopleView = Backbone.View.extend({
 var person1 = new Person({
     id: 1,
     name: "John",
-    age: 33
+    age: 33,
+    hobbies: ["sport", "IT", "fishing"]
 });
 
 var person2 = new Person({
     id: 2,
     name: "Thomas",
-    age: 40
+    age: 40,
+    hobbies: ["golf", "cars"]
 });
 
 var person3 = new Person({
     id: 3,
     name: "Alice",
-    age: 25
+    age: 25,
+    hobbies: ["swimming"]
 });
 
 var people = new People([person1, person2, person3]);
@@ -74,10 +74,20 @@ var people = new People([person1, person2, person3]);
 var peopleView = new PeopleView({collection: people});
 peopleView.render();
 
+
+var Router = Backbone.Router.extend({
+    routes: {
+        "client/:id(:age)" : "showClientDetails"
+    },
+    showClientDetails : function (id) {
+        var model = people.get(id);
+        var view = new PersonDetails({model: model});
+        view.render();
+    }
+
+});
+
 var router = new Router();
 Backbone.history.start({pushState: true});
 
-var m = people.first();
-m.set("name","Igor");
 
-router.navigate("client",{trigger: true});

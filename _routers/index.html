@@ -6,9 +6,17 @@
 </head>
 <body>
 
-<script type="text/template" id="personTemplate">
+<script id="personTemplate" type="text/template">
     <span><%= name %></span>
     <strong><%= age %></strong>
+</script>
+
+<script id="personDetailsTemplate" type="text/template">
+    <h2>Details</h2>
+
+    <strong>Name:</strong> <span><%= name %></span><br>
+    <strong>Age:</strong> <span><%= age %></span><br>
+    <strong>Hobbies:</strong> <span><%= hobbies.join(", ") %></span><br>
 </script>
 
 <script src="../assets/libs/jquery.js"></script>
@@ -17,4 +25,3 @@
 <script src="js/scripts.js"></script>
 
 </body>
-</html>
