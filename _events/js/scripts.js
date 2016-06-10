@@ -1,8 +1,14 @@
 var Person = Backbone.Model.extend({
+    validate: function(attrs, options) {
 
+        if (attrs.name === '') {
+            return "Name can not be empty."
+        }
+    }
 });
 
 var People = Backbone.Collection.extend({
+
 });
 
 var PersonView = Backbone.View.extend({
@@ -17,7 +23,10 @@ var PersonView = Backbone.View.extend({
         this.listenTo(this.model, "remove", function () {
             this.remove();
         });
-        this.listenTo(this.model, "change", this.render)
+        this.listenTo(this.model, "change", this.render);
+        this.listenTo(this.model, "invalid", function (model, error, options) {
+            console.log(error);
+        })
     }
 });
 
@@ -62,13 +71,13 @@ var model = people.first();
 var view = new PersonView({model:model});
 
 view.render();
-console.log(view.el);
 
-var peopleView = new PeopleView({collection:people});
+var peopleView = new PeopleView({collection: people});
 peopleView.render();
 
 people.add({id: 4, name: "Ada", age: 24});
 people.remove(2);
 
 var m = people.first();
-m.set("name","Jerry");
+m.set("name","", {validate: true});
+m.set("name","Igor", {silent: true});
