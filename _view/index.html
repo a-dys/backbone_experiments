@@ -9,6 +9,13 @@
 <script type="text/template" id="personTemplate">
     <span><%= name %></span>
     <span><%= age %></span>
+    <% for (var i = 0; i < hobbies.length; i++) { %>
+    <i><%= hobbies[i] %></i>
+    <% } %>
+
+    <!--    or                          -->
+    <!--    <%= hobbies.join(', ') %>   -->
+
 </script>
 
 <script src="../assets/libs/jquery.js"></script>
