@@ -13,17 +13,11 @@ var PersonView = Backbone.View.extend({
         this.$el.append(html);
         return this;
     },
-    events: {
-        "click strong" : "changeColor",
-        "dblclick" : "showInfo"
-    },
-    changeColor: function (e) {
-        this.$('strong').css('color','green');
-    },
-    showInfo: function (e) {
-        alert("Imię: "+ this.model.get('name') +", wiek: "+ this.model.get('age'));
+    initialize : function() {
+        this.listenTo(this.model, "remove", function () {
+            this.remove();
+        })
     }
-
 });
 
 var PeopleView = Backbone.View.extend({
@@ -73,3 +67,4 @@ var peopleView = new PeopleView({collection:people});
 peopleView.render();
 
 people.add({id: 4, name: "Ada", age: 24});
+people.remove(2);
