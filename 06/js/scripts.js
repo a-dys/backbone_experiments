@@ -51,3 +51,30 @@ console.log(people.toJSON());
 console.log("People unshift(person1): ");
 people.unshift(person1);
 console.log(people.toJSON());
+
+console.log("Update: ");
+people.set([{
+    id: 2,
+    name: "Thomas",
+    age: 40,
+    hobbies: ["golf", "cars"]
+},
+    {
+        id: 3,
+        name: "Alice",
+        age: 31,
+        hobbies: ["swimming","hiking"]
+    }
+]);
+console.log(people.toJSON());
+
+
+console.log("Update with options: ");
+people.set([{
+    id: 2,
+    name: "Thomas",
+    age: 76,
+    hobbies: ["golf", "cars"]
+}
+], {remove:false});
+console.log(people.toJSON());
