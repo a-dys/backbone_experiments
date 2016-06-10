@@ -10,13 +10,14 @@ var PersonView = Backbone.View.extend({
     template: _.template($("#personTemplate").html()),
     render: function () {
         var html = this.template(this.model.toJSON());
-        this.$el.append(html);
+        this.$el.html(html);
         return this;
     },
     initialize : function() {
         this.listenTo(this.model, "remove", function () {
             this.remove();
-        })
+        });
+        this.listenTo(this.model, "change", this.render)
     }
 });
 
@@ -68,3 +69,6 @@ peopleView.render();
 
 people.add({id: 4, name: "Ada", age: 24});
 people.remove(2);
+
+var m = people.first();
+m.set("name","Jerry");
