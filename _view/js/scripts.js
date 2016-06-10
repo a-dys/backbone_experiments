@@ -16,6 +16,19 @@ var PersonView = Backbone.View.extend({
 
 });
 
+var PeopleView = Backbone.View.extend({
+   tagName: 'ul',
+   render: function () {
+       this.collection.each(this.addOne, this);
+       $('body').append(this.el);
+   },
+   addOne: function (model) {
+       var view = new PersonView({model: model});
+       this.$el.append(view.render().el)
+   }
+
+});
+
 var person1 = new Person({
     id: 1,
     name: "John",
@@ -44,3 +57,6 @@ var view = new PersonView({model:model});
 
 view.render();
 console.log(view.el);
+
+var peopleView = new PeopleView({collection:people});
+peopleView.render();
