@@ -1,9 +1,20 @@
+var Vent = _.extend({}, Backbone.Events);
+
+Vent.on("update", function(model) {
+    alert(model.get("name") + " was updated!")
+});
+
 var Person = Backbone.Model.extend({
     validate: function(attrs, options) {
 
         if (attrs.name === '') {
             return "Name can not be empty."
         }
+    },
+    initialize: function () {
+        this.on("change", function () {
+            Vent.trigger("update", this);
+        })
     }
 });
 
@@ -75,9 +86,5 @@ view.render();
 var peopleView = new PeopleView({collection: people});
 peopleView.render();
 
-people.add({id: 4, name: "Ada", age: 24});
-people.remove(2);
-
 var m = people.first();
-m.set("name","", {validate: true});
-m.set("name","Igor", {silent: true});
+m.set("name","Igor");
