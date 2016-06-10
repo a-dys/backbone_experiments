@@ -12,6 +12,16 @@ var PersonView = Backbone.View.extend({
         var html = this.template(this.model.toJSON());
         this.$el.append(html);
         return this;
+    },
+    events: {
+        "click strong" : "changeColor",
+        "dblclick" : "showInfo"
+    },
+    changeColor: function (e) {
+        this.$('strong').css('color','green');
+    },
+    showInfo: function (e) {
+        alert("Imię: "+ this.model.get('name') +", wiek: "+ this.model.get('age'));
     }
 
 });
