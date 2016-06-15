@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "name": "William",
+    "age": 31,
+    "hobbies": [
+      "movies",
+      "IT",
+      "fishing"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Lucy",
+    "age": 16,
+    "hobbies": [
+      "cats",
+      "swimming"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Mark",
+    "age": 29,
+    "hobbies": [
+      "cycling"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Paul",
+    "age": 38,
+    "hobbies": [
+      "clubbing",
+      "cars"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Arnold",
+    "age": 22,
+    "hobbies": [
+      "programming"
+    ]
+  }
+]
