@@ -76,8 +76,8 @@ peopleView.render();
 
 
 var Router = Backbone.Router.extend({
-    routes: {
-        "client/:id(:age)" : "showClientDetails"
+    initialize: function () {
+        this.route("client/:id", "client-details", this.showClientDetails);
     },
     showClientDetails : function (id) {
         var model = people.get(id);
