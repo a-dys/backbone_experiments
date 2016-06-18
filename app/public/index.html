@@ -22,7 +22,7 @@
         </div>
 
         <div class="app-sidebar-nav">
-            <a href="list-movies.html" class="active">
+            <a href="/movies" class="active" pushstate-link>
                 <i class="fa fa-play-circle-o"></i>
                 Movies base
             </a>
@@ -31,7 +31,7 @@
                     <i class="fa fa-ellipsis-h"></i>
                 </div>
 
-            <a href="list-rents.html">
+            <a href="/rents" pushstate-link>
                 <i class="fa fa-calendar"></i>
                 Rental
             </a>
@@ -57,26 +57,26 @@
         </div>
 
         <div class="app-main-tabs active" id="video-tabs">
-            <a href="list-movies.html" class="active">
+            <a href="/movies" class="active" pushstate-link>
                 <i class="fa fa-film"></i>
                 Movies
             </a>
-            <a href="list-actors.html">
+            <a href="/actors" pushstate-link>
                 <i class="fa fa-users"></i>
                 Actors
             </a>
-            <a href="list-categories.html">
+            <a href="/categories" pushstate-link>
                 <i class="fa fa-list-ol"></i>
                 Categories
             </a>
         </div>
 
         <div class="app-main-tabs" id="rental-tabs">
-            <a href="list-rents.html">
+            <a href="/rents" pushstate-link>
                 <i class="fa fa-thumbs-o-up"></i>
                 Rental
             </a>
-            <a href="list-clients.html">
+            <a href="/clients" pushstate-link>
                 <i class="fa fa-user"></i>
                 Clients
             </a>
@@ -164,6 +164,7 @@
 <script src="js/libs/jquery.js"></script>
 <script src="js/libs/underscore.js"></script>
 <script src="js/libs/backbone.js"></script>
+<script src="js/libs/pushstate-links.js"></script>
 
 <script src="js/Setup.js"></script>
 
