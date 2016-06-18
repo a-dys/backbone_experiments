@@ -140,15 +140,29 @@
     </span>
 </script>
 
+<script id="actorListItemTemplate" type="text/template">
+    <span class="title"><%= name %></span>
+    <span class="btn-rounded details">
+        <i class="fa fa-search"></i>
+    </span>
+</script>
+
 <script src="js/libs/jquery.js"></script>
 <script src="js/libs/underscore.js"></script>
 <script src="js/libs/backbone.js"></script>
 
 <script src="js/Setup.js"></script>
+
 <script src="js/Models/MovieModel.js"></script>
 <script src="js/Collections/MoviesListCollection.js"></script>
 <script src="js/Views/MovieListItemView.js"></script>
 <script src="js/Views/MoviesListView.js"></script>
+
+<script src="js/Models/ActorModel.js"></script>
+<script src="js/Collections/ActorsListCollection.js"></script>
+<script src="js/Views/ActorListItemView.js"></script>
+<script src="js/Views/ActorsListView.js"></script>
+
 <script src="js/Routers/Router.js"></script>
 
 <script src="js/App.js"></script>
