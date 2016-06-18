@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Movies Rental</title>
+    <title>Movies Database</title>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -26,15 +26,6 @@
                 <i class="fa fa-play-circle-o"></i>
                 Movies base
             </a>
-
-                <div class="app-sidebar-sep">
-                    <i class="fa fa-ellipsis-h"></i>
-                </div>
-
-            <a href="/rents" pushstate-link data-tabs="rental-tabs">
-                <i class="fa fa-calendar"></i>
-                Rental
-            </a>
         </div>
 
     </div>
@@ -50,8 +41,6 @@
 
             <div class="app-status">
                 <span class="app-status-item"><i class="fa fa-film"></i> Movies <strong>50</strong></span>
-                <span class="app-status-item"><i class="fa fa-thumbs-o-up"></i> Rented <strong>12</strong></span>
-                <span class="app-status-item"><i class="fa fa-user"></i> Clients <strong>6</strong></span>
             </div>
 
         </div>
@@ -71,45 +60,9 @@
             </a>
         </div>
 
-        <div class="app-main-tabs" id="rental-tabs">
-            <a href="/rents" pushstate-link>
-                <i class="fa fa-thumbs-o-up"></i>
-                Rental
-            </a>
-            <a href="/clients" pushstate-link>
-                <i class="fa fa-user"></i>
-                Clients
-            </a>
-        </div>
-
         <div class="app-content-wrapper">
 
             <div class="app-content">
-            </div>
-
-            <div class="app-content-sidebar">
-                <h3>
-                    <i class="fa fa-thumbs-o-up"></i>
-                    Latest rentals
-                </h3>
-
-                <ul class="app-latest-rents">
-                    <li>
-                        <span class="client">Bob Marley</span>
-                        <span class="movie">The Lion King</span>
-                        <span class="date">34 minuty temu</span>
-                    </li>
-                    <li>
-                        <span class="client">Ann May</span>
-                        <span class="movie">The Matrix</span>
-                        <span class="date">godzinę temu</span>
-                    </li>
-                    <li>
-                        <span class="client">Daniel White</span>
-                        <span class="movie">Everything Is Illuminated</span>
-                        <span class="date">Wczoraj, 10:20</span>
-                    </li>
-                </ul>
             </div>
 
         </div>
@@ -127,23 +80,10 @@
 
 <script id="actorListItemTemplate" type="text/template">
     <span class="title"><%= name %></span>
-    <span class="btn-rounded details">
-        <i class="fa fa-search"></i>
-    </span>
-</script>
-
-<script id="clientListItemTemplate" type="text/template">
-    <span class="title"><%= first_name %> <%= last_name %></span>
-    <span class="btn-rounded details">
-        <i class="fa fa-search"></i>
-    </span>
 </script>
 
 <script id="categoryListItemTemplate" type="text/template">
     <span class="title"><%= name %></span>
-    <span class="btn-rounded details">
-        <i class="fa fa-search"></i>
-    </span>
 </script>
 
 <script id="movieDetailsTemplate" type="text/template">

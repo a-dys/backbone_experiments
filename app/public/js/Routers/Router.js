@@ -29,17 +29,7 @@
             APP.Views.Navigation.highlight("actors");
 
         },
-        showClientsList: function () {
-            var clients = new APP.Collections.ClientsList(),
-                view = new APP.Views.ClientsList({collection: clients});
 
-            APP.showMainView(view);
-            clients.fetch({
-                reset: true
-            });
-            APP.Views.Navigation.highlight("clients");
-
-        },
         showCategoriesList: function () {
             var categories = new APP.Collections.CategoriesList(),
                 view = new APP.Views.CategoriesList({collection: categories});

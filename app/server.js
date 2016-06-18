@@ -59,30 +59,6 @@ app.get("/actors", function (req, res) {
     });
 });
 
-app.get("/clients", function (req, res) {
-    var limit = 5;
-
-    MongoClient.connect(dbUrl, function (err, db) {
-        if (err) {
-            res.status(500);
-            res.json({error: true});
-
-            return;
-        }
-
-        db.collection("clients").find({}, {limit: limit}).toArray(function (err, docs) {
-            if (err) {
-                res.status(500);
-                res.json({error: true});
-
-                return;
-            }
-            res.json(docs);
-            db.close();
-        });
-    });
-});
-
 app.get("/categories", function (req, res) {
 
     MongoClient.connect(dbUrl, function (err, db) {
