@@ -11,6 +11,8 @@ app.get("/", function (req, res) {
 });
 
 app.get("/movies", function (req, res) {
+    var limit = 5;
+
     MongoClient.connect(dbUrl, function (err, db) {
         if (err) {
             res.status(500);
@@ -19,7 +21,7 @@ app.get("/movies", function (req, res) {
             return;
         }
 
-        db.collection("movies").find({}).toArray(function (err, docs) {
+        db.collection("movies").find({}, {limit: limit}).toArray(function (err, docs) {
             if (err) {
                 res.status(500);
                 res.json({error: true});
