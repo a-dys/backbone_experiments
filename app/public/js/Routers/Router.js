@@ -5,7 +5,8 @@
             "movies": "showMoviesList",
             "actors": "showActorsList",
             "clients": "showClientsList",
-            "categories": "showCategoriesList"
+            "categories": "showCategoriesList",
+            "movie/:id": "showMovieDetails"
         },
         showMoviesList: function () {
             var movies = new APP.Collections.MoviesList(),
@@ -49,6 +50,13 @@
             });
             APP.Views.Navigation.highlight("categories");
 
+        },
+
+        showMovieDetails: function (id) {
+            var movie = new APP.Models.Movie({_id: id}),
+                view = new APP.Views.MovieDetails({model: movie});
+            APP.showMainView(view);
+            movie.fetch();
         }
     });
 }) ();
