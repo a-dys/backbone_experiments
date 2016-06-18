@@ -1,0 +1,501 @@
+/*--------------------------*/
+/*       CSS Stylesheet     */
+/* (C) 2015 www.eduweb.pl   */
+/*--------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a {
+  text-decoration: none; }
+
+.outline {
+  clip: rect(0px 0px 0px 0px);
+  position: absolute;
+  *clip: rect 0 0 0 0; }
+
+input, textarea, button {
+  outline: none; }
+
+mark {
+  background: none;
+  color: inherit; }
+
+body {
+  font-family: "Droid Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #4b4b4b; }
+
+strong {
+  font-weight: 700; }
+
+.app-heading {
+  padding: 30px;
+  border-bottom: 1px #e2e2e2 solid;
+  font-size: 32px; }
+  .app-heading .fa {
+    margin-right: 10px;
+    position: relative;
+    top: 1px;
+    opacity: 0.3; }
+
+.btn {
+  background: #ff503f;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font: 18px/60px "Droid Sans", sans-serif;
+  height: 60px;
+  padding: 0 60px;
+  position: relative; }
+  .special.btn {
+    background-color: #9f9f9f;
+    cursor: not-allowed; }
+
+.btn-rounded {
+  border: 1px #c8c8c8 solid;
+  border-radius: 50%;
+  color: #989898;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  height: 35px;
+  line-height: 34px;
+  text-align: center;
+  width: 35px; }
+  .btn-rounded:hover, .active.btn-rounded {
+    background-color: #ff503f;
+    border-color: #ff503f;
+    color: #fff; }
+
+.app-form {
+  padding: 30px 0; }
+
+.app-form-field {
+  margin-bottom: 30px;
+  padding: 0 30px; }
+  .app-form-field label {
+    display: inline-block;
+    font-size: 18px;
+    margin-right: 20px;
+    width: 130px; }
+    .app-form-field label[for="movie-description"], .app-form-field label[for="ms-movie-id"], .app-form-field label[for="ms-client-id"], .app-form-field label[for="ms-movie-categories"], .app-form-field label[for="ms-movie-actors"] {
+      padding-top: 15px;
+      vertical-align: top; }
+  .app-form-field input[type='text'],
+  .app-form-field textarea {
+    border: 1px #e2e2e2 solid;
+    border-radius: 5px;
+    box-shadow: inset -1px 0 4px rgba(0, 0, 0, 0.07);
+    color: #9b9b9b;
+    font: 22px "Droid Sans", sans-serif;
+    height: 45px;
+    padding: 0 20px;
+    width: calc(100% - 155px); }
+    .app-form-field input[type='text'].medium,
+    .app-form-field textarea.medium {
+      width: 350px; }
+    .app-form-field input[type='text'].short,
+    .app-form-field textarea.short {
+      width: 190px; }
+    .app-form-field input[type='text'].hidden,
+    .app-form-field textarea.hidden {
+      display: none; }
+    .app-form-field input[type='text']#client-id-number,
+    .app-form-field textarea#client-id-number {
+      text-transform: uppercase; }
+  .app-form-field textarea {
+    height: 300px;
+    line-height: 1.5;
+    max-height: 600px;
+    padding-top: 15px;
+    resize: vertical; }
+  .app-form-field ::-webkit-input-placeholder {
+    color: #cecece; }
+  .app-form-field :-moz-placeholder {
+    color: #cecece; }
+  .app-form-field ::-moz-placeholder {
+    color: #cecece; }
+  .app-form-field :-ms-input-placeholder {
+    color: #cecece; }
+
+.app-form-submit {
+  border-top: 1px #e2e2e2 solid;
+  padding: 30px;
+  padding-bottom: 0; }
+  .app-form-submit .btn {
+    float: right;
+    margin-left: 20px; }
+
+.app-form-submit::before, .app-header::before, .app-content-wrapper::before, .app-item-info::before, .app-item-info p::before, .app-actions::before, .app-form-submit::after, .app-header::after, .app-content-wrapper::after, .app-item-info::after, .app-item-info p::after, .app-actions::after {
+  content: ' ';
+  display: table; }
+.app-form-submit::after, .app-header::after, .app-content-wrapper::after, .app-item-info::after, .app-item-info p::after, .app-actions::after {
+  clear: both; }
+.app-form-submit, .app-header, .app-content-wrapper, .app-item-info, .app-item-info p, .app-actions {
+  *zoom: 1; }
+
+.app-sort li {
+  transition: color 0.2s linear; }
+
+.btn-rounded, .app-sidebar-nav a, .app-sidebar-nav a::before, .app-sidebar-nav a .fa, .app-items-list li, .app-items-pagination a, .app-item-info p, .app-latest-rents li {
+  transition: all 0.2s linear; }
+
+html,
+body {
+  height: 100%; }
+
+body {
+  background-color: #fff; }
+
+.app-wrapper {
+  min-height: 100%;
+  padding-left: 130px;
+  position: relative;
+  width: 100%; }
+
+.app-header {
+  background-color: #f1f1f1;
+  padding: 30px; }
+
+.app-breadcrumbs {
+  float: left;
+  font-size: 0;
+  line-height: 0; }
+
+.app-status {
+  float: right;
+  font-size: 0;
+  line-height: 0;
+  text-transform: uppercase; }
+
+.app-status-item {
+  border: 1px #c8c8c8 solid;
+  border-radius: 20px;
+  box-shadow: 0 1px 0 #fff;
+  display: inline-block;
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
+  margin-right: 12px;
+  padding: 0 20px;
+  white-space: nowrap; }
+  .app-status-item:last-child {
+    margin-right: 0; }
+  .app-status-item .fa {
+    font-size: 16px;
+    margin-right: 8px; }
+
+.app-sidebar {
+  background: #23282e url("../images/sidebar_bg.png") repeat;
+  left: 0;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  width: 130px; }
+
+.app-logo {
+  margin: 30px 0;
+  width: 100%; }
+  .app-logo img {
+    display: block;
+    margin: 0 auto; }
+
+.app-sidebar-sep {
+  color: #787878;
+  font-size: 30px;
+  text-align: center; }
+
+.app-sidebar-nav a {
+  color: #787878;
+  display: block;
+  font-size: 16px;
+  margin: 15px 0;
+  padding: 20px 0;
+  position: relative;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35); }
+  .app-sidebar-nav a::before {
+    background-color: #ff503f;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+    content: '';
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    width: 4px; }
+  .app-sidebar-nav a .fa {
+    display: block;
+    font-size: 50px;
+    margin-bottom: 10px; }
+  .app-sidebar-nav a.active, .app-sidebar-nav a:hover {
+    color: #fff; }
+    .app-sidebar-nav a.active::before, .app-sidebar-nav a:hover::before {
+      opacity: 1;
+      visibility: visible; }
+    .app-sidebar-nav a.active .fa, .app-sidebar-nav a:hover .fa {
+      color: #ff503f; }
+  .app-sidebar-nav a:last-child .fa {
+    font-size: 44px; }
+
+.app-main-tabs {
+  background-color: #f1f1f1;
+  border-bottom: 1px #d3d7da solid;
+  border-top: 1px #d3d7da solid;
+  box-shadow: inset 0 1px 0 #fff;
+  display: none;
+  font-size: 0;
+  line-height: 0; }
+  .app-main-tabs.active {
+    display: block; }
+  .app-main-tabs a {
+    background-color: #f8f8f8;
+    border-right: 1px #d3d7da solid;
+    box-shadow: inset 0 1px 0 #fff;
+    color: #4b4b4b;
+    display: inline-block;
+    font-size: 22px;
+    height: 80px;
+    line-height: 82px;
+    min-width: 265px;
+    padding: 0 30px; }
+    .app-main-tabs a .fa {
+      font-size: 36px;
+      margin-right: 10px;
+      opacity: .3;
+      position: relative;
+      top: 4px; }
+    .app-main-tabs a.active {
+      background-color: #fff;
+      position: relative; }
+      .app-main-tabs a.active:after {
+        background-color: #fff;
+        bottom: -1px;
+        content: '';
+        height: 1px;
+        left: 0;
+        position: absolute;
+        width: 100%; }
+
+.app-content-wrapper {
+  padding: 30px; }
+
+.app-content,
+.app-content-sidebar {
+  border: 1px #e2e2e2 solid;
+  border-radius: 5px;
+  box-shadow: -1px 0 4px rgba(0, 0, 0, 0.07); }
+
+.app-content {
+  float: left;
+  width: calc(70% - 10px); }
+
+.app-content-sidebar {
+  float: right;
+  width: calc(30% - 10px); }
+
+.app-items-list li {
+  border-bottom: 1px #e2e2e2 solid;
+  font-size: 18px;
+  padding: 30px; }
+  .app-items-list li:last-child {
+    border-bottom: 0; }
+  .app-items-list li .client,
+  .app-items-list li .date {
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 20px;
+    opacity: .5; }
+    .app-items-list li .client .fa,
+    .app-items-list li .date .fa {
+      margin-right: 5px; }
+  .app-items-list li .details {
+    float: right;
+    position: relative;
+    top: -7px; }
+  .app-items-list li:hover {
+    background-color: #fbfbfb; }
+.app-items-list .counter {
+  background-color: #ff503f;
+  border-radius: 5px;
+  color: #fff;
+  display: inline-block;
+  margin-right: 20px;
+  padding: 7px 10px; }
+
+.app-items-pagination {
+  border-top: 1px #e2e2e2 solid;
+  font-size: 0;
+  line-height: 0;
+  padding: 30px;
+  text-align: center; }
+  .app-items-pagination a {
+    border: 1px #e2e2e2 solid;
+    border-radius: 50%;
+    color: #b1b1b1;
+    display: inline-block;
+    font-size: 14px;
+    height: 35px;
+    line-height: 34px;
+    margin: 0 4px;
+    width: 35px; }
+    .app-items-pagination a:hover, .app-items-pagination a.active {
+      background-color: #ff503f;
+      border-color: #ff503f;
+      color: #fff; }
+
+.app-item-info {
+  padding: 30px 0; }
+  .app-item-info p {
+    border-bottom: 1px #e2e2e2 solid;
+    padding: 30px; }
+    .app-item-info p:first-child {
+      padding-top: 0; }
+    .app-item-info p:last-child {
+      border-bottom: 0;
+      padding-bottom: 0; }
+    .app-item-info p span {
+      color: #7e7e7e;
+      display: inline-block;
+      min-width: 140px; }
+    .app-item-info p i {
+      float: right;
+      line-height: 26px;
+      width: calc(100% - 140px); }
+  .app-item-info .btn {
+    float: right;
+    margin-right: 30px;
+    margin-top: 30px; }
+
+.app-actions {
+  border-bottom: 1px #e2e2e2 solid;
+  padding: 30px;
+  position: relative; }
+  .app-actions .add {
+    float: right; }
+
+.app-search {
+  float: left;
+  width: 40%; }
+  .app-search input[type='text'] {
+    background: none;
+    border: 0;
+    color: #bebebe;
+    font-family: "Droid Sans", sans-serif;
+    font-size: 18px;
+    height: 35px;
+    width: 100%; }
+    .app-search input[type='text'] ::-webkit-input-placeholder {
+      color: #bebebe; }
+    .app-search input[type='text'] :-moz-placeholder {
+      color: #bebebe; }
+    .app-search input[type='text'] ::-moz-placeholder {
+      color: #bebebe; }
+    .app-search input[type='text'] :-ms-input-placeholder {
+      color: #bebebe; }
+
+.app-sort {
+  background: #fff url("../images/sort_arrow.png") 90% 16px no-repeat;
+  border: 1px #e2e2e2 solid;
+  border-radius: 20px;
+  cursor: pointer;
+  position: absolute;
+  right: 75px;
+  top: 30px; }
+  .app-sort li {
+    color: #8b8b8b;
+    display: none;
+    font-size: 15px;
+    height: 35px;
+    line-height: 36px;
+    padding: 0 20px;
+    width: 160px; }
+    .app-sort li:first-child {
+      display: block; }
+    .app-sort li:hover {
+      color: #ff503f; }
+  .app-sort:hover li {
+    display: block; }
+
+.app-content-sidebar h3 {
+  border-bottom: 1px #e2e2e2 solid;
+  font-size: 16px;
+  padding: 30px; }
+  .app-content-sidebar h3 .fa {
+    margin-right: 10px; }
+
+.app-latest-rents li {
+  border-bottom: 1px #e2e2e2 solid;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 22px;
+  padding: 20px 30px; }
+  .app-latest-rents li:last-child {
+    border-bottom: 0; }
+  .app-latest-rents li:hover {
+    background-color: #fbfbfb; }
+.app-latest-rents .movie {
+  color: #989898;
+  font-style: italic; }
+.app-latest-rents .date {
+  color: #bebebe;
+  display: block;
+  font-size: 12px; }
+
+/*--------------------------*/
+/*       COPYRIGHT 2015     */
+/*       www.eduweb.pl      */
+/*--------------------------*/
+
+/*# sourceMappingURL=style.css.map */

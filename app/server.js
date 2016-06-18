@@ -4,8 +4,10 @@ var express = require("express"),
     app = express(),
     dbUrl = "mongodb://localhost/27017/database_name";
 
+app.use(express.static(__dirname + "/public"));
+
 app.get("/", function (req, res) {
-    res.send("Hello my dear user!");
+    res.sendFile(__dirname + '/index.html');
 });
 
 app.listen("8000", function () {

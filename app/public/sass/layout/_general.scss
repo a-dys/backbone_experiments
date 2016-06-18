@@ -1,0 +1,27 @@
+%clearfix {
+  @include clearfix;
+}
+
+%transition-color {
+  @include transition($props: color);
+}
+
+%transition-all{
+  @include transition;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: $general-bg-color;
+}
+
+.app-wrapper {
+  min-height: 100%;
+  padding-left: 130px;
+  position: relative;
+  width: 100%;
+}

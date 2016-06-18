@@ -1,0 +1,40 @@
+.app-header {
+  @extend %clearfix;
+  background-color: $general-dimmed-bg-color;
+  padding: 30px;
+}
+
+.app-breadcrumbs {
+  float: left;
+  font-size: 0;
+  line-height: 0;
+}
+
+.app-status {
+  float: right;
+  font-size: 0;
+  line-height: 0;
+  text-transform: uppercase;
+}
+
+.app-status-item {
+  border: 1px $general-border-color solid;
+  border-radius: 20px;
+  box-shadow: 0 1px 0 #fff;
+  display: inline-block;
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
+  margin-right: 12px;
+  padding: 0 20px;
+  white-space: nowrap;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  .fa {
+    font-size: 16px;
+    margin-right: 8px;
+  }
+}

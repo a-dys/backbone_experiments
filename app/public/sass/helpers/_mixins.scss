@@ -1,0 +1,62 @@
+@mixin box-sizing($type) {
+  box-sizing: $type;
+}
+
+@mixin clearfix {
+  &::before,
+  &::after {
+    content: ' ';
+    display: table;
+  };
+
+  &::after {
+    clear: both;
+  };
+
+  & {
+    *zoom: 1;
+  }
+}
+
+@mixin transition($props: all, $speed: .2s, $easing: linear) {
+  transition: $props $speed $easing;
+}
+
+@mixin selection($color, $bgcolor, $elem: '') {
+  #{$elem}::selection {
+    background-color: $bgcolor;
+    color: $color;
+  }
+}
+
+@mixin placeholder {
+  ::-webkit-input-placeholder { @content };
+  :-moz-placeholder { @content };
+  ::-moz-placeholder { @content };
+  :-ms-input-placeholder { @content };
+}
+
+@mixin no-text {
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  text-shadow: none;
+}
+
+// transform
+@mixin transform($transforms) {
+  transform: $transforms;
+}
+
+// vertical-center
+@mixin vertical-center {
+  position: relative;
+  top: 50%;
+
+  @include transform(translateY(-50%));
+}
+
+// scale
+@mixin scale($scale) {
+  @include transform(scale($scale));
+}

@@ -1,0 +1,46 @@
+%button {
+  background: $general-special-color;
+  border: 0;
+  border-radius: 5px;
+  color: $general-special-text-color;
+  cursor: pointer;
+  display: inline-block;
+  font: 18px / 60px $droidsans;
+  height: 60px;
+  padding: 0 60px;
+  position: relative;
+
+  &.special {
+    background-color: desaturate($general-special-color, 100%);
+    cursor: not-allowed;
+  }
+}
+
+%button-rounded {
+  @extend %transition-all;
+  border: 1px $general-border-color solid;
+  border-radius: 50%;
+  color: lighten($general-text-color, 30%);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  height: 35px;
+  line-height: 34px;
+  text-align: center;
+  width: 35px;
+
+  &:hover,
+  &.active {
+    background-color: $general-special-color;
+    border-color: $general-special-color;
+    color: $general-special-text-color;
+  }
+}
+
+.btn {
+  @extend %button;
+}
+
+.btn-rounded {
+  @extend %button-rounded;
+}

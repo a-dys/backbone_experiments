@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movies Rental</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-wrapper">
+
+    <div class="app-sidebar">
+
+        <div class="app-logo">
+            <img src="images/logo.png" alt="">
+        </div>
+
+        <div class="app-sidebar-sep">
+            <i class="fa fa-ellipsis-h"></i>
+        </div>
+
+        <div class="app-sidebar-nav">
+            <a href="list-movies.html" class="active">
+                <i class="fa fa-play-circle-o"></i>
+                Movies base
+            </a>
+
+                <div class="app-sidebar-sep">
+                    <i class="fa fa-ellipsis-h"></i>
+                </div>
+
+            <a href="list-rents.html">
+                <i class="fa fa-calendar"></i>
+                Rental
+            </a>
+        </div>
+
+    </div>
+
+    <div class="app-main">
+
+        <div class="app-header">
+
+            <div class="app-breadcrumbs">
+                <span class="app-status-item">Cockpit</span>
+                <span class="app-status-item">Movies</span>
+            </div>
+
+            <div class="app-status">
+                <span class="app-status-item"><i class="fa fa-film"></i> Movies <strong>50</strong></span>
+                <span class="app-status-item"><i class="fa fa-thumbs-o-up"></i> Rented <strong>12</strong></span>
+                <span class="app-status-item"><i class="fa fa-user"></i> Clients <strong>6</strong></span>
+            </div>
+
+        </div>
+
+        <div class="app-main-tabs active" id="video-tabs">
+            <a href="list-movies.html" class="active">
+                <i class="fa fa-film"></i>
+                Movies
+            </a>
+            <a href="list-actors.html">
+                <i class="fa fa-users"></i>
+                Actors
+            </a>
+            <a href="list-categories.html">
+                <i class="fa fa-list-ol"></i>
+                Categories
+            </a>
+        </div>
+
+        <div class="app-main-tabs" id="rental-tabs">
+            <a href="list-rents.html">
+                <i class="fa fa-thumbs-o-up"></i>
+                Rental
+            </a>
+            <a href="list-clients.html">
+                <i class="fa fa-user"></i>
+                Clients
+            </a>
+        </div>
+
+        <div class="app-content-wrapper">
+
+            <div class="app-content">
+                <div class="app-actions">
+                    <div class="app-search">
+                        <input type="text" placeholder="Search...">
+                    </div>
+
+                    <span class="btn-rounded active add" onclick="window.location.href = 'new-movie.html'">
+                        <i class="fa fa-plus"></i>
+                    </span>
+
+                    <ul class="app-sort">
+                        <li>Ascending</li>
+                        <li>Descending</li>
+                    </ul>
+                </div>
+
+                <ul class="app-items-list">
+                    <li>
+                        <span class="title">The Matrix</span>
+                        <span class="btn-rounded details" onclick="window.location.href = 'single-movie.html'">
+                            <i class="fa fa-search"></i>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="title">Przeminęło z wiatrem 2</span>
+                        <span class="btn-rounded details" onclick="window.location.href = 'single-movie.html'">
+                            <i class="fa fa-search"></i>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="title">Everything Is Illuminated</span>
+                        <span class="btn-rounded details" onclick="window.location.href = 'single-movie.html'">
+                            <i class="fa fa-search"></i>
+                        </span>
+                    </li>
+                </ul>
+
+                <div class="app-items-pagination">
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                </div>
+            </div>
+
+            <div class="app-content-sidebar">
+                <h3>
+                    <i class="fa fa-thumbs-o-up"></i>
+                    Latest rentals
+                </h3>
+
+                <ul class="app-latest-rents">
+                    <li>
+                        <span class="client">Bob Marley</span>
+                        <span class="movie">The Lion King</span>
+                        <span class="date">34 minuty temu</span>
+                    </li>
+                    <li>
+                        <span class="client">Ann May</span>
+                        <span class="movie">The Matrix</span>
+                        <span class="date">godzinę temu</span>
+                    </li>
+                    <li>
+                        <span class="client">Daniel White</span>
+                        <span class="movie">Everything Is Illuminated</span>
+                        <span class="date">Wczoraj, 10:20</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><!-- /.app-wrapper -->
+
+<script src="js/libs/jquery.js"></script>
+<script src="js/libs/underscore.js"></script>
+<script src="js/libs/backbone.js"></script>
+
+</body>
+</html>

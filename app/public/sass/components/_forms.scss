@@ -1,0 +1,76 @@
+.app-form {
+  padding: 30px 0;
+}
+
+.app-form-field {
+  margin-bottom: 30px;
+  padding: 0 30px;
+
+  label {
+    display: inline-block;
+    font-size: 18px;
+    margin-right: 20px;
+    width: 130px;
+
+    &[for="movie-description"],
+    &[for="ms-movie-id"],
+    &[for="ms-client-id"],
+    &[for="ms-movie-categories"],
+    &[for="ms-movie-actors"] {
+      padding-top: 15px;
+      vertical-align: top;
+    }
+  }
+
+  input[type='text'],
+  textarea {
+    border: 1px lighten($general-border-color, 10%) solid;
+    border-radius: 5px;
+    box-shadow: inset -1px 0 4px rgba(0, 0, 0, .07);
+    color: $form-input-text-color;
+    font: 22px $droidsans;
+    height: 45px;
+    padding: 0 20px;
+    width: calc(100% - 155px);
+
+    &.medium {
+      width: 350px;
+    }
+
+    &.short {
+      width: 190px;
+    }
+
+    &.hidden {
+      display: none;
+    }
+
+    &#client-id-number {
+      text-transform: uppercase;
+    }
+  }
+
+  textarea {
+    height: 300px;
+    line-height: 1.5;
+    max-height: 600px;
+    padding-top: 15px;
+    resize: vertical;
+  }
+
+  @include placeholder {
+    color: lighten($form-input-text-color, 20%);
+  }
+}
+
+.app-form-submit {
+  @extend %clearfix;
+  border-top: 1px lighten($general-border-color, 10%) solid;
+  padding: 30px;
+  padding-bottom: 0;
+
+  .btn {
+    float: right;
+    margin-left: 20px;
+  }
+}
