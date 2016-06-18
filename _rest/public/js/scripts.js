@@ -1,6 +1,10 @@
 var Person = Backbone.Model.extend({
     url: function() {
-        return "/client/" + this.get("id");
+        if (this.isNew()) {
+            return "/clients";
+        } else {
+            return "/client/" + this.get("id");
+        }
     }
 });
 
@@ -77,3 +81,7 @@ var peopleView = new PeopleView({collection: people});
 var router = new Router();
 
 Backbone.history.start({pushState: true});
+
+var m = new Person({name: "Micky", age: "12", hobbies:["diving"]});
+m.save();
+people.fetch({reset:true});
