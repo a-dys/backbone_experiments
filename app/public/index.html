@@ -147,6 +147,20 @@
     </span>
 </script>
 
+<script id="clientListItemTemplate" type="text/template">
+    <span class="title"><%= first_name %> <%= last_name %></span>
+    <span class="btn-rounded details">
+        <i class="fa fa-search"></i>
+    </span>
+</script>
+
+<script id="categoryListItemTemplate" type="text/template">
+    <span class="title"><%= name %></span>
+    <span class="btn-rounded details">
+        <i class="fa fa-search"></i>
+    </span>
+</script>
+
 <script src="js/libs/jquery.js"></script>
 <script src="js/libs/underscore.js"></script>
 <script src="js/libs/backbone.js"></script>
@@ -162,6 +176,16 @@
 <script src="js/Collections/ActorsListCollection.js"></script>
 <script src="js/Views/ActorListItemView.js"></script>
 <script src="js/Views/ActorsListView.js"></script>
+
+<script src="js/Models/ClientModel.js"></script>
+<script src="js/Collections/ClientsListCollection.js"></script>
+<script src="js/Views/ClientListItemView.js"></script>
+<script src="js/Views/ClientsListView.js"></script>
+
+<script src="js/Models/CategoryModel.js"></script>
+<script src="js/Collections/CategoriesListCollection.js"></script>
+<script src="js/Views/CategoryListItemView.js"></script>
+<script src="js/Views/CategoriesListView.js"></script>
 
 <script src="js/Routers/Router.js"></script>
 
