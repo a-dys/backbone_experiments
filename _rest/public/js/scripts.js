@@ -85,3 +85,6 @@ Backbone.history.start({pushState: true});
 var m = new Person({name: "Micky", age: "12", hobbies:["diving"]});
 m.save();
 people.fetch({reset:true});
+
+people.create({name: "Harry", age: "42", hobbies:["painting", "volleyball"]});
+people.fetch({reset:true});
