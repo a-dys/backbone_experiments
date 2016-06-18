@@ -100,34 +100,6 @@
                     </ul>
                 </div>
 
-                <ul class="app-items-list">
-                    <li>
-                        <span class="title">The Matrix</span>
-                        <span class="btn-rounded details" onclick="window.location.href = 'single-movie.html'">
-                            <i class="fa fa-search"></i>
-                        </span>
-                    </li>
-                    <li>
-                        <span class="title">Przeminęło z wiatrem 2</span>
-                        <span class="btn-rounded details" onclick="window.location.href = 'single-movie.html'">
-                            <i class="fa fa-search"></i>
-                        </span>
-                    </li>
-                    <li>
-                        <span class="title">Everything Is Illuminated</span>
-                        <span class="btn-rounded details" onclick="window.location.href = 'single-movie.html'">
-                            <i class="fa fa-search"></i>
-                        </span>
-                    </li>
-                </ul>
-
-                <div class="app-items-pagination">
-                    <a href="#" class="active">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                </div>
             </div>
 
             <div class="app-content-sidebar">
@@ -161,11 +133,24 @@
 
 </div><!-- /.app-wrapper -->
 
+<script id="movieListItemTemplate" type="text/template">
+    <span class="title"><%= title %></span>
+    <span class="btn-rounded details">
+        <i class="fa fa-search"></i>
+    </span>
+</script>
+
 <script src="js/libs/jquery.js"></script>
 <script src="js/libs/underscore.js"></script>
 <script src="js/libs/backbone.js"></script>
 
 <script src="js/Setup.js"></script>
+<script src="js/Models/MovieModel.js"></script>
+<script src="js/Collections/MoviesListCollection.js"></script>
+<script src="js/Views/MovieListItemView.js"></script>
+<script src="js/Views/MoviesListView.js"></script>
+<script src="js/Routers/Router.js"></script>
+
 <script src="js/App.js"></script>
 </body>
 </html>

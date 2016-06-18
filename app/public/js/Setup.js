@@ -3,6 +3,9 @@
         Models: {},
         Collections: {},
         Views: {},
-        Routers: {}
+        Routers: {},
+        Regions: {
+            appContent: $(".app-content")
+        }
     };
 }) ();
