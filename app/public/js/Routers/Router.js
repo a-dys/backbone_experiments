@@ -15,6 +15,7 @@
             movies.fetch({
                 reset: true
             });
+            APP.Views.Navigation.highlight("movies");
         },
         showActorsList: function () {
             var actors = new APP.Collections.ActorsList(),
@@ -24,24 +25,30 @@
             actors.fetch({
                 reset: true
             });
+            APP.Views.Navigation.highlight("actors");
+
         },
         showClientsList: function () {
-            var actors = new APP.Collections.ClientsList(),
-                view = new APP.Views.ClientsList({collection: actors});
+            var clients = new APP.Collections.ClientsList(),
+                view = new APP.Views.ClientsList({collection: clients});
 
             APP.showMainView(view);
-            actors.fetch({
+            clients.fetch({
                 reset: true
             });
+            APP.Views.Navigation.highlight("clients");
+
         },
         showCategoriesList: function () {
-            var actors = new APP.Collections.CategoriesList(),
-                view = new APP.Views.CategoriesList({collection: actors});
+            var categories = new APP.Collections.CategoriesList(),
+                view = new APP.Views.CategoriesList({collection: categories});
 
             APP.showMainView(view);
-            actors.fetch({
+            categories.fetch({
                 reset: true
             });
+            APP.Views.Navigation.highlight("categories");
+
         }
     });
 }) ();

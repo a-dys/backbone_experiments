@@ -22,7 +22,7 @@
         </div>
 
         <div class="app-sidebar-nav">
-            <a href="/movies" class="active" pushstate-link>
+            <a href="/movies" class="active" pushstate-link data-tabs="video-tabs">
                 <i class="fa fa-play-circle-o"></i>
                 Movies base
             </a>
@@ -31,7 +31,7 @@
                     <i class="fa fa-ellipsis-h"></i>
                 </div>
 
-            <a href="/rents" pushstate-link>
+            <a href="/rents" pushstate-link data-tabs="rental-tabs">
                 <i class="fa fa-calendar"></i>
                 Rental
             </a>
@@ -167,6 +167,8 @@
 <script src="js/libs/pushstate-links.js"></script>
 
 <script src="js/Setup.js"></script>
+
+<script src="js/Views/Navigation.js"></script>
 
 <script src="js/Models/MovieModel.js"></script>
 <script src="js/Collections/MoviesListCollection.js"></script>
