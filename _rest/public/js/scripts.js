@@ -57,6 +57,7 @@ var PeopleView = Backbone.View.extend({
     },
     initialize: function () {
         this.listenTo(this.collection, "reset", this.render);
+        this.listenTo(this.collection, "add", this.render);
     },
     addOne: function (model) {
         var view = new PersonView({model: model});
@@ -84,7 +85,5 @@ Backbone.history.start({pushState: true});
 
 var m = new Person({name: "Micky", age: "12", hobbies:["diving"]});
 m.save();
-people.fetch({reset:true});
 
 people.create({name: "Harry", age: "42", hobbies:["painting", "volleyball"]});
-people.fetch({reset:true});
