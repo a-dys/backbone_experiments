@@ -34,6 +34,10 @@ var PersonDetailsView = Backbone.View.extend({
 var PersonView = Backbone.View.extend({
     tagName: 'li',
     template: _.template($("#personTemplate").html()),
+    initialize: function () {
+        this.listenTo(this.model, "change", this.render);
+        this.listenTo(this.model, "destroy", this.remove);
+    },
     render: function () {
         var html = this.template(this.model.toJSON());
         this.$el.html(html);
@@ -87,3 +91,4 @@ var m = new Person({name: "Micky", age: "12", hobbies:["diving"]});
 m.save();
 
 people.create({name: "Harry", age: "42", hobbies:["painting", "volleyball"]});
+
