@@ -72,7 +72,7 @@
     </span>
 </script>
 <script id="movieListItemTemplate" type="text/template">
-    <span class="title"><%= title %></span>
+    <span class="title"><%- title %></span>
     <span class="btn-rounded details">
         <i class="fa fa-search"></i>
     </span>
@@ -92,11 +92,11 @@
         Movie's details
     </h3>
     <div class="app-item-info">
-        <p><span>Title:</span> <%= title %> </p>
-        <p><span>Date:</span> <%= date %> </p>
-        <p><span>Categories:</span> <%= categories.join(", ") %> </p>
-        <p><span>Actors:</span> <%= actors.join(", ") %> </p>
-        <p><span>Description:</span> <i> <%= description %> </i></p>
+        <p><span>Title:</span> <%- title %> </p>
+        <p><span>Date:</span> <%- date %> </p>
+        <p><span>Categories:</span> <%- categories.join(", ") %> </p>
+        <p><span>Actors:</span> <%- actors.join(", ") %> </p>
+        <p><span>Description:</span> <i> <%- description %> </i></p>
 
         <button type="button" class="btn edit">Edit</button>
     </div>
