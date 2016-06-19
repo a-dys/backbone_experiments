@@ -17,6 +17,13 @@
             "#movie-categories": "categories",
             "#movie-actors": "actors",
             "#movie-description": "description"
+        },
+        events: {
+            "submit form": "updateMovie"
+        },
+        updateMovie: function (e) {
+            e.preventDefault();
+            this.model.save({wait: true});
         }
     });
 })();
