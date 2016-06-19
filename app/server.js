@@ -160,6 +160,34 @@ app.post("/movies", function (req, res) {
     });
 });
 
+app.delete("/movie/:id", function (req, res) {
+    var id = req.params.id,
+        isValid = BSON.ObjectID.isValid(id);
+    if (!isValid) {
+        res.satus(500);
+        res.json({error: true});
+        return;
+    }
+    MongoClient.connect(dbUrl, function (err, db) {
+        if (err) {
+            res.status(500);
+            res.json({error: true});
+
+            return;
+        }
+        db.collection("movies").findAndRemove({_id: new mongo.ObjectID(id)}, function (err, doc) {
+            if (err) {
+                res.status(500);
+                res.json({error: true});
+
+                return;
+            }
+            res.json({deleted: true});
+            db.close();
+        });
+    });
+});
+
 app.listen("8000", function () {
     console.log("Server is running!");
 });

@@ -4,6 +4,7 @@
         template: _.template($("#movieEditNewTemplate").html()),
         initialize: function () {
             this.listenToOnce(this.model, "change", this.render);
+            this.listenToOnce(this.model, "destroy", this.redirectToMovies);
         },
         render: function () {
             var html = this.template(this.model.toJSON());
@@ -19,11 +20,21 @@
             "#movie-description": "description"
         },
         events: {
-            "submit form": "updateMovie"
+            "submit form": "updateMovie",
+            "click .delete": "deleteMovie"
         },
         updateMovie: function (e) {
             e.preventDefault();
-            this.model.save({wait: true});
+            this.model.save({}, {wait: true});
+        },
+        deleteMovie: function () {
+            var confirmation = confirm("Are you sure?");
+            if (confirmation) {
+                this.model.destroy({wait: true});
+            }
+        },
+        redirectToMovies: function () {
+            APP.router.navigate("/movies", {trigger: true});
         }
     });
 })();
