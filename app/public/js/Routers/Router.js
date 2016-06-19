@@ -6,7 +6,8 @@
             "actors": "showActorsList",
             "clients": "showClientsList",
             "categories": "showCategoriesList",
-            "movie/:id": "showMovieDetails"
+            "movie/:id": "showMovieDetails",
+            "movie/:id/edit": "showMovieEdit"
         },
         showMoviesList: function () {
             var movies = new APP.Collections.MoviesList(),
@@ -45,6 +46,13 @@
         showMovieDetails: function (id) {
             var movie = new APP.Models.Movie({_id: id}),
                 view = new APP.Views.MovieDetails({model: movie});
+            APP.showMainView(view);
+            movie.fetch();
+        },
+
+        showMovieEdit: function (id) {
+            var movie = new APP.Models.Movie({_id: id}),
+                view = new APP.Views.MovieEdit({model: movie});
             APP.showMainView(view);
             movie.fetch();
         }
