@@ -104,7 +104,11 @@
 </script>
 
 <script id="movieEditNewTemplate" type="text/template">
-    <h3 class="app-heading"><i class="fa fa-edit"></i> Edycja filmu</h3>
+    <% if (this.model.isNew()) { %>
+    <h3 class="app-heading"><i class="fa fa-plus"></i> New movie</h3>
+    <% } else { %>
+    <h3 class="app-heading"><i class="fa fa-edit"></i> Edit movie</h3>
+    <% } %>
     <div class="app-form">
         <form action="" id="new-movie">
             <div class="app-form-field">
@@ -134,7 +138,9 @@
 
             <div class="app-form-submit">
                 <button type="submit" class="btn">Save</button>
+                <% if (!this.model.isNew()) { %>
                 <button type="button" class="btn special delete">Delete</button>
+                <% } %>
             </div>
         </form>
     </div>
@@ -167,6 +173,7 @@
 
 <script src="js/Views/MovieDetailsView.js"></script>
 <script src="js/Views/MovieEditView.js"></script>
+<script src="js/Views/MovieNewView.js"></script>
 
 <script src="js/Routers/Router.js"></script>
 

@@ -14,8 +14,6 @@ app.get("/", function (req, res) {
 });
 
 app.get("/movies", function (req, res) {
-    var limit = 5;
-
     MongoClient.connect(dbUrl, function (err, db) {
         if (err) {
             res.status(500);
@@ -24,7 +22,7 @@ app.get("/movies", function (req, res) {
             return;
         }
 
-        db.collection("movies").find({}, {limit: limit}).toArray(function (err, docs) {
+        db.collection("movies").find({}, {}).toArray(function (err, docs) {
             if (err) {
                 res.status(500);
                 res.json({error: true});
@@ -135,6 +133,28 @@ app.put("/movie/:id", function (req, res) {
                 return;
             }
             res.json(doc);
+            db.close();
+        });
+    });
+});
+
+app.post("/movies", function (req, res) {
+
+    MongoClient.connect(dbUrl, function (err, db) {
+        if (err) {
+            res.status(500);
+            res.json({error: true});
+
+            return;
+        }
+        db.collection("movies").insert(req.body, function (err, doc) {
+            if (err) {
+                res.status(500);
+                res.json({error: true});
+
+                return;
+            }
+            res.json(doc.ops[0]);
             db.close();
         });
     });

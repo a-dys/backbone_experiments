@@ -7,7 +7,8 @@
             "clients": "showClientsList",
             "categories": "showCategoriesList",
             "movie/:id": "showMovieDetails",
-            "movie/:id/edit": "showMovieEdit"
+            "movie/:id/edit": "showMovieEdit",
+            "movies/new": "showMovieNew"
         },
         showMoviesList: function () {
             var movies = new APP.Collections.MoviesList(),
@@ -55,6 +56,12 @@
                 view = new APP.Views.MovieEdit({model: movie});
             APP.showMainView(view);
             movie.fetch();
+        },
+
+        showMovieNew: function () {
+            var movie = new APP.Models.Movie(),
+                view = new APP.Views.MovieNew({model: movie});
+            APP.showMainView(view);
         }
     });
 }) ();
