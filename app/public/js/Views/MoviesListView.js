@@ -6,7 +6,12 @@
             this.listenTo(this.collection, "reset", this.render);
         },
         render: function () {
+            var actionsView = new APP.Views.ListActions({
+                collectionName: "movies"
+            });
+
             this.collection.each(this.addOne, this);
+            APP.Regions.appContent.html(actionsView.render().el);
             APP.Regions.appContent.append(this.el);
         },
         addOne: function (model) {

@@ -35,12 +35,7 @@
         <div class="app-header">
 
             <div class="app-breadcrumbs">
-                <span class="app-status-item">Cockpit</span>
                 <span class="app-status-item">Movies</span>
-            </div>
-
-            <div class="app-status">
-                <span class="app-status-item"><i class="fa fa-film"></i> Movies <strong>50</strong></span>
             </div>
 
         </div>
@@ -71,6 +66,11 @@
 
 </div><!-- /.app-wrapper -->
 
+<script id="listActionsTemplate" type="text/template">
+    <span class="btn-rounded active add">
+        <i class="fa fa-plus"></i>
+    </span>
+</script>
 <script id="movieListItemTemplate" type="text/template">
     <span class="title"><%= title %></span>
     <span class="btn-rounded details">
@@ -123,12 +123,12 @@
 
             <div class="app-form-field">
                 <label for="movie-categories">Categories</label>
-                <input type="text" class="medium" id="movie-categories" placeholder="Choose category">
+                <input type="text" class="medium" id="movie-categories" placeholder="Write category">
             </div>
 
             <div class="app-form-field">
                 <label for="movie-actors">Actors</label>
-                <input type="text" class="medium" id="movie-actors" placeholder="Choose actors">
+                <input type="text" class="medium" id="movie-actors" placeholder="Write actors">
             </div>
 
             <div class="app-form-field">
@@ -155,6 +155,7 @@
 <script src="js/Setup.js"></script>
 
 <script src="js/Views/Navigation.js"></script>
+<script src="js/Views/ListActionsView.js"></script>
 
 <script src="js/Models/MovieModel.js"></script>
 <script src="js/Collections/MoviesListCollection.js"></script>
